@@ -1,0 +1,75 @@
+body,html {
+    background-color: lightskyblue;
+    /* text-align: center; */
+}
+
+#title {
+    background-color: #1c1f1e;
+    font-family: "Bungee Shade", sans-serif;
+    color: rgb(12, 221, 221);
+    height: 22vh;
+    text-align: center;
+}
+
+#description{
+    font-size: xx-large;
+    background-color: #7E6B8F;
+    color: #0a4621;
+    text-shadow: #1c1f1e;
+    height: 10vh;
+}
+
+#destag {
+    height: 10vh;
+    display: table;
+    margin: 0 auto;
+    line-height:8vh;
+    font-weight: bolder;
+}
+
+#mainhead {
+    font-size: 5vh;
+    display: table;
+    margin: 0 auto;
+    line-height:15vh;
+}
+
+#bestscore {
+    font-size: 2vh;
+}
+
+.custom {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #1d5c35;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.custom:hover {
+    background-color: #205c40;
+}
+  
+.custom:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+ #startbtn {
+    background-color: lightskyblue;
+    text-align: center;
+    vertical-align: middle;
+    height: 100px;
+}
+
+#buttonstart {
+    margin:20px;
+}
