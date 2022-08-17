@@ -7,24 +7,37 @@
         <title>Memory Match Game</title>
         <link type="text/css" rel="stylesheet" href="styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DynaPuff">
     </head>
 
     <body>
-        <div id="title">
-            <span id="mainhead">Nicky G's Memory Match Game!</span>
-            <div id="bestscore">Best Score: </div>
-        </div>
-        <div id="description" class="fs-4">
-            <span id="destag">A simple memory matching game. Attempt to match each of the pictures or gifs in the grid of tiles.</span>
+        <div class="startpage">
+            <div id="title">
+                <span id="mainhead">Nicky G's Memory Match Game!</span>
+                <div id="bestscore">Best Score: <span id="bestscorenum">--</span></div>
+            </div>
+            <div id="description" class="fs-4">
+                <span id="destag">A simple memory matching game. Attempt to match each of the pictures or gifs in the grid of tiles.</span>
+            </div>
+        
+            <div id="startbtn">
+                <button class="custom" id="buttonstart">Start Game!</button>
+            </div>
         </div>
         
-        <div id="startbtn">
-            <button class="custom" id="buttonstart">Start Game!</button>
+        <div class="gameboard" id="gameboard">
+            <div class="row" id="gameboardrow">
+            </div>
+            <div id="landingimagediv">
+                <img id="landingimage" src="imagesgifs/landing.jpg">
+            </div>
         </div>
 
+        
+
+
         <script type="text/javascript" src="app.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> -->
     </body>
 
 
