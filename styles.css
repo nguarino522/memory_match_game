@@ -109,47 +109,27 @@ body,html {
     /* padding-bottom: 30px; */
     position: relative;
     margin: 1rem auto;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
 }
 
 
-.imagecard:hover {
+.imagecardwrapper:hover {
     cursor: pointer;
     /* background-color: #b2c0b9; */
     transform: translateY(-3px);
 }
 
-.imagecard:active {
+.imagecardwrapper:active {
     cursor: pointer;
-    background-color: #b2c0b9;
     transform: translateY(3px);
 }
-
-/* .startpage {
-    margin-top: 90vh;
-} */
-
-/* .game-card-wrapper:hover {
-    cursor: pointer;
-} */
-
-/* .game-card:hover {
-    cursor: pointer;
-} */
-  
-/* .game-card {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    
-} */
   
 .imagecard.flipped {
     transform: rotateY( 180deg );
 }
   
-.front, .back {
+.front,.back {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,6 +150,7 @@ body,html {
   
 .back {
     transform: rotateY( 180deg );
+    background-color: #1c1f1e;
 }
   
 .back > img {

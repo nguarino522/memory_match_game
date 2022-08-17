@@ -1,6 +1,10 @@
-const gameboard = document.getElementById("gameboard");
-const gameboardrow = document.getElementById("gameboardrow");
-
+let gameboard = document.getElementById("gameboard");
+let gameboardrow = document.getElementById("gameboardrow");
+let card1 = null;
+let card2 = null;
+let cardsFlipped = 0;
+let currentScore = 0;
+let bestScore = localStorage.getItem("bestscore");
 
 const imagesgifs = [
     "image1.gif",
@@ -8,41 +12,47 @@ const imagesgifs = [
     "image3.gif",
     "image4.jpg",
     "image5.gif",
-    "image6.jpg",
+    "image6.gif",
     "image7.gif",
-    "image8.jpg",
+    "image8.gif",
     "image9.gif",
     "image1.gif",
     "image2.jpg",
     "image3.gif",
     "image4.jpg",
     "image5.gif",
-    "image6.jpg",
+    "image6.gif",
     "image7.gif",
-    "image8.jpg",
+    "image8.gif",
     "image9.gif"
-    ];
-console.log(imagesgifs);
-// const shuffledImageGifs = imagesgifs.
+];
 
+
+// listening for the start game button to be clicked which calls start game function
 let startBtn = document.getElementById("buttonstart");
 startBtn.addEventListener("click", startGame);
 
+// start game function to create gameboard and populdate and randomize gif and images for matching
 function startGame (){
-    console.log("start button hit");
     let shuffledImageGifs = shuffleArray(imagesgifs);
     createGameboard();
+    setScore(0);
     let backCards = document.querySelectorAll(".back");
     for (let i = 0; i < backCards.length; i++) {
         let path = "imagesgifs/" + shuffledImageGifs[i];
         backCards[i].children[0].src = path;
     }
-
+    let cards = document.querySelectorAll(".imagecard");
+    for (let c of cards) {
+        c.addEventListener("click", gameLogic);
+    }
+    // for (let c of cards) {
+    //     c.addEventListener("click", logevents);
+    // }
 }
 
 // function to create gameboard area after the start button is clicked
 function createGameboard () {
-    console.log("create gameboard function called");
     for (let i = 0; i < 18; i++) {
             
         let divCol = document.createElement("div");
@@ -82,7 +92,7 @@ function createGameboard () {
     let currentScoreNum = document.createElement("span");
     currentScore.innerText = "Current Score: ";
     currentScore.setAttribute("id", "currentscore")
-    currentScoreNum.innerText = "0";
+    currentScoreNum.innerText = "--";
     currentScoreNum.setAttribute("id", "currentscorenum");
 
     currentScore.appendChild(currentScoreNum);
@@ -102,3 +112,62 @@ function shuffleArray (arrayToShuffle) {
     }
     return arrayToShuffle;
 }
+
+function setScore(newScore) {
+    currentScore = newScore;
+    document.getElementById("currentscorenum").innerText = currentScore;
+}
+
+function gameLogic (evt){
+    
+    let currentCard = evt.target.parentElement.parentElement;
+    if (card1 === null || card2 === null){
+        if (!currentCard.classList.contains("flipped")) {
+            setScore(currentScore + 1);
+        }
+        currentCard.classList.add("flipped");
+        
+        card1 = card1 || currentCard;
+        card2 = currentCard === card1 ? null : currentCard;
+    }
+
+    if (card1 && card2){
+        let img1 = card1.children[1].children[0].src;
+        let img2 = card2.children[1].children[0].src;
+
+        if (img1 === img2) {
+            cardsFlipped = cardsFlipped + 2;
+            card1.removeEventListener("click", gameLogic);
+            card2.removeEventListener("click", gameLogic);
+            card1 = null;
+            card2 = null;
+        } else {
+            setTimeout(function(){
+                card1.classList.remove("flipped");
+                card2.classList.remove("flipped");
+                card1 = null;
+                card2 = null;
+            }, 1000);
+        }
+    }
+
+    if (cardsFlipped === 18) {
+        setTimeout(endGame(), 1000);
+    }
+
+}
+
+function endGame(){
+    alert("YOU WIN!")
+    
+    document.getElementById("gameboardrow").delete();
+    // let currentScore = document.createElement("div");
+    // let currentScoreNum = document.createElement("span");
+    // currentScore.innerText = "Current Score: ";
+    // currentScore.setAttribute("id", "currentscore")
+    // currentScoreNum.innerText = "--";
+    // currentScoreNum.setAttribute("id", "currentscorenum");
+
+    // currentScore.appendChild(currentScoreNum);
+    // gameboard.appendChild(currentScore);
+};
