@@ -40,7 +40,6 @@ body,html {
     font-size: 5vh;
     display: table;
     margin: 0 auto;
-    /* line-height:15vh; */
 }
 
 #bestscore {
@@ -76,7 +75,6 @@ body,html {
     background-color: lightskyblue;
     text-align: center;
     vertical-align: middle;
-    /* height: 100px; */
 }
 
 #buttonstart {
@@ -100,13 +98,8 @@ body,html {
 }
   
 .imagecard {
-    /* perspective: 600px; */
-    /* width: 75%;
-    height: 75%;
-    padding-bottom: 75%; */
     width: 13vh;
     height: 13vh;
-    /* padding-bottom: 30px; */
     position: relative;
     margin: 1rem auto;
     transition: transform 0.5s;
@@ -116,7 +109,6 @@ body,html {
 
 .imagecardwrapper:hover {
     cursor: pointer;
-    /* background-color: #b2c0b9; */
     transform: translateY(-3px);
 }
 
@@ -203,7 +195,6 @@ body,html {
     background-color: lightskyblue;
     text-align: center;
     vertical-align: middle;
-    /* height: 100px; */
 }
 
 #buttonrestart {
