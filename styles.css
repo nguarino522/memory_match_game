@@ -72,7 +72,7 @@ body,html {
     transform: translateY(4px);
 }
 
- #startbtn {
+#startbtn {
     background-color: lightskyblue;
     text-align: center;
     vertical-align: middle;
@@ -144,7 +144,7 @@ body,html {
   
 .front {
 
-    /* background: linear-gradient(315deg, #ce29f7, white); */
+    background: linear-gradient(315deg, #299af7, rgb(51, 148, 116));
     font-size: 3rem;
  }
   
@@ -171,4 +171,42 @@ body,html {
     color: rgb(39, 6, 35);
     font-size: 10vh;
     text-align: center;
+}
+
+
+.custom1 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #5c311d;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.custom1:hover {
+    background-color: #b2c0b9;
+}
+  
+.custom1:active {
+    background-color: #8e623e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#restartbtn {
+    background-color: lightskyblue;
+    text-align: center;
+    vertical-align: middle;
+    /* height: 100px; */
+}
+
+#buttonrestart {
+    margin:20px;
+    height: 60px;
 }
