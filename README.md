@@ -1,5 +1,7 @@
 # A Simple Memory Match Game!
 
+A mmemory matching game of gifs and images utlizing JavaScript DOM manipulation, timers/events, and localStorage in the browser.
+
 Using Bootstrap 5.2 for grid rows and cards.
 Used DynaPuff Google Fonts: https://fonts.googleapis.com/css?family=DynaPuff
 
